@@ -1,0 +1,109 @@
+<div id="wrapper">
+
+
+    <!-- Header
+    ================================================== -->
+    <app-header></app-header>
+    <div class="clearfix"></div>
+
+    <!-- Titlebar
+    ================================================== -->
+    <div id="titlebar" class="single" style="background-image: url(../../assets/images/img66.jpg);text-align:center">
+        <div class="container">
+
+            <div class="sixteen columns">
+                <h2>Mes Postulations</h2>
+                <nav id="breadcrumbs">
+                    <ul>
+                        <li>You are here:</li>
+                        <li><a routerLink="/listeoffre">**** Offre ****</a></li>
+                        <li>Listes De Mes Postulations </li>
+                    </ul>
+                </nav>
+            </div>
+     
+        </div>
+    </div>
+
+
+    <!-- Content
+    ================================================== -->
+
+  
+<!-- Container -->
+     <div class="container">
+   
+        <!-- <section class="ftco-section"> -->
+            <!-- <div class="container"> -->
+                <!-- <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">Table #05</h2>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-wrap">
+                            <table class="table table-responsive-xl">
+                              <thead>
+                                <tr>
+                                  <th>Titre Offre</th>
+                                  <th>Entreprise </th>
+                                  <th>Email Entreprise </th>
+                                  <th>Num Tél </th>
+                                  <th>Status</th>
+                                  
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="alert" role="alert" *ngFor="let offre of listOffre">
+                                    
+                                  <td>
+                                    <img [src]="offre.logo" style="height:20px ;">
+                                    {{offre.titre}}
+                                  </td>
+                                  <td class="d-flex align-items-center">
+                                    <img [src]="offre.entreprise?.img" style="height:20px ;">
+                                    <div class="pl-3 email">
+                                        <span>{{offre.entreprise?.nom}}</span>
+                                       
+                                    </div>
+                                </td>
+                                <td ><a href="mailto:{{offre.entreprise?.email}}">{{offre.entreprise?.email}}</a></td>
+                                  <td ><a href="tel:{{offre.entreprise?.tel}}">{{offre.entreprise?.tel}}</a></td>
+                                  <!-- <td class="status"><span class="active">Active</span></td> -->
+                                  <td *ngIf="offre.datefin!>now.toISOString().slice(0, 10);else sh" class="status"><span
+                                    class="active">Active</span></td>
+                            <ng-template #sh>
+                                <td class="status"><span class="Danger">Expiré</span></td>
+                            </ng-template>
+                                  
+                                </tr>
+                               
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        <!-- </section> -->
+    
+    
+   
+
+          <!-- Container / End -->
+    </div>
+    <!-- Container / End -->
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <div class="margin-top-30"></div>
+
+  <app-footer></app-footer> 
+    <!-- Back To Top Button -->
+  
+<div id="backtotop"><a href="#"></a></div>
+
+
+</div>

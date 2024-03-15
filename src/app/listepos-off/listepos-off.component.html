@@ -1,0 +1,100 @@
+<div id="wrapper">
+
+
+    <!-- Header
+    ================================================== -->
+    <app-header></app-header>
+    <div class="clearfix"></div>
+
+    <!-- Titlebar
+    ================================================== -->
+    <div id="titlebar" class="single" style="background-image: url(../../assets/images/img66.jpg);text-align:center">
+        <div class="container">
+
+            <div class="sixteen columns">
+                <h2>Les Postulations</h2>
+                <nav id="breadcrumbs">
+                    <ul>
+                        <li>You are here:</li>
+                        <li><a routerLink="/listeoffre">**** Offre ****</a></li>
+                        <li>Listes Des Postulations </li>
+                    </ul>
+                </nav>
+            </div>
+     
+        </div>
+    </div>
+
+
+    <!-- Content
+    ================================================== -->
+
+  
+<!-- Container -->
+     <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                      <div *ngIf="nbr==0;else show">
+                        <h2 class="text-center">Aucune Postulation Pour Cette Offre!</h2>
+                </div>
+                     <ng-template #show>
+                        <div class="table-wrap">
+                            <table class="table table-responsive-xl">
+                              <thead>
+                                <tr>
+                                  <th>Nom & Prenom</th>
+                                  <th>Email </th>
+                                  <th>Num Tél </th>
+                                  <th>CV</th>
+                                  
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="alert" role="alert" *ngFor="let post of list">
+                                    
+                                  <td class="d-flex align-items-center">
+                                    <img [src]="post.formateur.img" style="height:50px ;">
+                                    <div class="pl-3 email">
+                                        <span>{{post.formateur.nom}}</span>
+                                        <span>{{post.formateur.prenom}}</span>
+                                    </div>
+                                </td>
+                                <td><a href="mailto:{{post.formateur.email}}">{{post.formateur.email}}</a></td>
+                                <td><a href="tel:{{post.formateur.tel}}">{{post.formateur.tel}}</a></td>
+
+                                <td class="status">
+                                   <img src="../../assets/images/pdf.png" style="height:50px ;cursor: pointer;"(click)="download(post.cv)" > 
+                                  
+                                </td>
+                                  
+                                </tr>
+                               
+                              </tbody>
+                            </table>
+                        </div>
+                      </ng-template>
+                    </div>
+                </div>
+            <!-- </div> -->
+        <!-- </section> -->
+    
+    
+   
+
+          <!-- Container / End -->
+    </div>
+    <!-- Container / End -->
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <div class="margin-top-30"></div>
+
+  <app-footer></app-footer> 
+    <!-- Back To Top Button -->
+  
+<div id="backtotop"><a href="#"></a></div>
+
+
+</div>
